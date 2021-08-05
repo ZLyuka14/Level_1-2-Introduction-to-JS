@@ -1,0 +1,347 @@
+:root{
+	--content-color: rgba(100, 100, 100, 0.5);
+	--btn-fz: 15px;
+}
+
+body {
+	position: relative;
+	background-color: darkslategray;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+.content-block{
+	background-color: var(--content-color);
+	border-radius: 5px;
+}
+/* Black squares section */
+.black-squares{
+	text-align: center;
+	height: 180px;
+	padding: 20px 0 0 0;
+	margin: 25px 0;
+	position: relative;
+}
+
+.black-square {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	display: inline-block;
+}
+
+.black-square__btns{
+	margin: 15px 0 0 0;
+	padding: 0;
+	position: absolute;
+	left: 494px;
+	bottom: 10px;
+}
+
+.btn{
+	padding: 10px;
+	background-color: black;
+	border: none;
+	color: white;
+	border-radius: 5px;
+	font-size: var(--btn-fz);
+	margin: 0 5px;
+	transition: all 0.3s ease-in-out;
+	cursor:pointer;
+}
+
+.btn:hover{
+	background-color: yellow;
+	color: black;
+}
+/* End of black squares section */
+
+/* Toggler section */
+.toggler {
+	margin: 25px 0;
+	padding: 25px 0;
+	text-align: center;
+}
+
+.inpt{
+	font-size: 18px;
+	background: black;
+	color: white;
+	border: none;
+	padding: 8px;
+	transition: all 0.3s ease;
+	border-radius: 4px;
+}
+
+.inpt:focus{
+	background: var(--content-color);
+	outline: 3px solid black;
+	color: black;
+}
+/* End of toggler section */
+
+/* Yellow square section */
+.yellow{
+	padding: 25px 0;
+	margin: 25px 0;
+	height: 147px;
+}
+.yellow-square {
+	background-color: yellow;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+/* End of Yellow square section */
+
+/* Red square section */
+.red{
+	padding: 25px 0;
+	margin: 25px 0;
+	text-align: center;
+	height: 143px;
+}
+
+.red-square {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	margin: 0 auto;
+}
+
+#hover01 {
+	margin: 0 0 15px 0;
+}
+
+/* End of red square section */
+
+/* Green square section */
+.green{
+	text-align: center;
+	height: 90px;
+	padding: 10px 0;
+	margin: 25px 0;
+}
+
+.green-square {
+	width: 50px;
+	height: 20px;
+	background-color: green;
+	margin: 0 auto;
+}
+
+#greenInput {
+	margin:0 0 15px 0;
+}
+/* End of green square section */
+
+/* Images section */
+.images {
+	padding: 25px 0;
+	margin: 25px 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.images-links{
+	resize: none;
+	position: relative;
+}
+
+.image-box{
+	flex: 0 0 100%;
+	margin: 0 25px;
+}
+
+.image-box img{
+	width: 250px;
+	height: 250px;
+	margin: 0 10px;
+}
+
+/* End of images section */
+
+.hidden {
+	display: none;
+}
+
+/* Coordinates section */
+.coordinates {
+	position: fixed;
+	right: 0;
+	top: 0;
+	padding: 10px;
+	margin: 10px;
+	font-size: 14px;
+}
+
+button {
+	cursor: pointer;
+}
+/* End of coordinates section */
+
+/* Save section */
+.save {
+	margin: 25px 0;
+	padding: 25px 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+.input {
+	flex: 0 0 30%;
+}
+/* End of save section */
+
+/* Block up. */
+.up {
+	display: block;
+}
+
+.fixed {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+}
+/* End of block up. */
+
+/* Propagation block */
+.propagation{
+	display: flex;
+	justify-content: center;
+	padding: 25px 0;
+	margin: 25px 0;
+}
+
+.parent {
+	border: 5px solid red;
+	width: 500px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.child {
+	border: 5px solid yellow;
+	width: 50%;
+	height: 50%;
+}
+/* End of propagation section. */
+
+/* Modal section */
+.modal{
+	padding: 25px 0;
+	margin: 25px 0;
+	text-align: center;
+}
+.popup {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.5);
+}
+/* End of Modal section */
+
+/* Go-block*/
+.go-block{
+	text-align: center;
+	padding: 25px 0;
+	margin: 25px 0;
+}
+.go {
+	margin: 0 0 0 0;
+}
+/* End of go-block */
+
+/* Drag section */
+.drag {
+	text-align: center;
+	padding: 25px 0;
+	margin: 25px 0;
+}
+.drag__input {
+	display: none;
+}
+
+.drag__label {
+	display: inline-block;
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size: 30px;
+	font-weight: 500;
+	border: 5px solid rgba(10, 119, 213, 1);
+	background: rgba(10, 119, 213, 0.5);
+	padding: 10px;
+	cursor: pointer;
+	transition: all 0.7s ease;
+	border-radius: 5px;
+
+}
+
+.drag__label:hover {
+	background: rgba(10, 119, 213, 1);
+	color: white;
+	transform: scale(1.2);
+}
+
+.draggable{
+	background: green !important;
+	color: white;
+	transform: scale(1.1);
+	border: none;
+}
+
+.filenames__title {
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size: 15px;
+	margin: 20px 0 0;
+}
+.filenames {
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size: 13px;
+}
+
+.tipbox{
+	display: block;
+	max-width: 220px;
+	height: auto;
+	margin: 0 auto 0;
+	text-align: left;
+}
+/* End of drag section. */
+
+/* CSV parser section */
+.csv {
+	padding: 25px 0;
+	margin: 25px 0;
+	text-align: center;
+}
+#csv01{
+	resize: none;
+	margin: 0 10px;
+}
+#mod01{
+	resize: none;
+	margin: 0 10px;
+}
+
+#modifyBtn{
+	margin: 10px auto 0;
+	display: block;
+}
+/* End of CSV parser section */

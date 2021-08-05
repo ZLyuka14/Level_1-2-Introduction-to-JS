@@ -1,0 +1,106 @@
+<DOCTYPE html>
+	<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Quick task</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<section class="black-squares content-block">
+				<div id="div" class="black-square"></div>
+				<div id="div" class="black-square"></div>
+				<div id="div" class="black-square"></div>
+				<div id="div" class="black-square"></div>
+				<div id="div" class="black-square"></div>
+				<div class="black-square__btns">
+					<button id="css" class="btn">CSS</button><button id="js" class="btn">JS</button><button id="jsCss" class="btn">JS + CSS</button>
+				</div>
+			</section>
+
+			<section class="toggler content-block">
+				<input id="selector" class="selector inpt" type="text">
+				<button id="selector-btn" class="btn">Toggle</button>
+			</section>
+
+			<section class="yellow content-block">
+				<div class="yellow-square"></div>
+			</section>
+
+			<section class="red content-block">
+				<button id="hover01" class="btn">Hover me</button>
+				<div class="red-square hidden"></div>
+			</section>
+
+			<section class="green content-block">
+				<div>
+					<input id="greenInput" class="inpt" type="text">
+					<div class="green-square hidden"></div>
+				</div>
+			</section>
+
+			<section class="images content-block">
+				<textarea class="images-links inpt" name="Image links" id="imgInput" cols="30" rows="10"></textarea>
+				<button id="addImgBtn" class="btn">Add images</button>
+				<div class="image-box"></div>
+			</section>
+
+			<aside class="coordinates content-block">
+				<span class="horizontal">X</span>
+				<span class="vertical">Y</span>
+				<p class="language"></p>
+				<p class="earth-coords">ss</p>
+			</aside>
+
+			<section class="save content-block">
+				<div id="localStorage" class="input inpt"></div>
+				<div id="cookies" class="input inpt">cookies</div>
+				<div id="sessionStorage" class="input inpt"></div>
+			</section>
+
+			<div class="fixed">
+				<button id="upBtn" class="hidden btn">up</button>
+			</div>
+
+			<section class="propagation content-block">
+				<div class="parent">
+					<div class="child">
+
+					</div>
+				</div>
+
+			</section>
+
+			<section class="modal content-block">
+				<div class="popup hidden"></div>
+				<button class="popup__btn btn">Show popup!</button>
+			</section>
+
+			<section class="go-block content-block">
+				<form class="go"><input class="btn" type="submit" value="GO"></form>
+			</section>
+
+			<section class="drag content-block">
+				<label class="drag__label" for="file01">Drop or select files</label>
+				<input class="drag__input" type="file" name="file" id="file01" multiple>
+				<div class="tipbox">
+					<div class="filenames__title hidden">Chosen files:</div>
+					<div class="filenames"></div>
+				</div>
+			</section>
+
+			<section class="csv content-block">
+				<textarea name="csvText" class="inpt" id="csv01" cols="20" rows="25"></textarea>
+				<textarea name="modifiedText" class="inpt" id="mod01" cols="60" rows="25"></textarea>
+				<button id="modifyBtn" class="Btn">Modify Text</button>
+			</section>
+		</div>
+
+		<script src="js/main.js"></script>
+	</body>
+
+	</html>
