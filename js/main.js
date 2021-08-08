@@ -315,9 +315,24 @@ selected.addEventListener("change", function (event) {
  */
 let csvText = document.querySelector('#csv01');
 let modText = document.querySelector('#mod01');
+let parseBtn = document.querySelector('#parse');
 let modifyBtn = document.querySelector('#modifyBtn');
-modifyBtn.addEventListener("click", () => { parseCSV(csvText.value, modText) });
 
+//This object will held parsed CSV text and a function to modify text so program doesnt need to parse it every time user clicks "Modify Text".
+let parsedText;
+parseBtn.addEventListener("click", function () {
+	parsedText = parseCSV(csvText.value, modText);
+	alert('Text has been parsed! Now you can modify text with CSV data.');
+});
+
+/**
+ * This function parses CSV text. Saves parsed data and function to modify any text on the run.
+ * Doesn`t need to reload page to use different CSV text or text that need to be modified.
+ * 
+ * @param {String} string in CSV format
+ * @param {String} modText any text
+ * @returns function that modifies text
+ */
 function parseCSV(string, modText) {
 	let strArray = string.split("\n").map((currentValue) => {
 		let sharpIndex = currentValue.indexOf("#");
@@ -336,21 +351,39 @@ function parseCSV(string, modText) {
 	strArray = strArray.sort(sortByPopulation).slice(0, 10);
 	let topCities = strArray.reduce(rateCities, {});
 
-	let enrichText = (citiesRating, text) => {
-		Object.keys(citiesRating).map((currentValue) => {
-			text.value = text.value.replace(currentValue,
+	let enrichText = () => {
+		Object.keys(topCities).map((currentValue) => {
+			modText.value = modText.value.replace(currentValue,
 				currentValue +
-				`(${citiesRating[currentValue]["rating"]} місце у ТОП-10 найбільших міст України, населення - ${citiesRating[currentValue]["population"]})`);
+				`(${topCities[currentValue]["rating"]} місце у ТОП-10 найбільших міст України, населення - ${topCities[currentValue]["population"]})`);
 		});
 	}
 
-	return enrichText(topCities, modText);
+	return enrichText;
 }
 
+
+//After parsing CSV text we can modify text. Change to other and modify using same parsed data without parsing again.
+modifyBtn.addEventListener("click", function () {
+	parsedText();
+});
+
+/**
+ * This little function helps to identify if string element has data or it`s a comment or empty element.
+ * 
+ * @param {string} arrElem - string element
+ * @returns {boolean} true if string element is not a comment or empty, false otherwise
+ */
 function isCity(arrElem) {
 	return !arrElem.startsWith("#") && arrElem;
 }
 
+/**
+ * This function turns simple string element to an object.
+ * 
+ * @param {string} arrElem - string element that contains coordinates, name of the city and it`s population
+ * @returns {Object} - with coordinates of the city and it`s population
+ */
 function buildMapArray(arrElem) {
 	let mappedArr = arrElem.split(",");
 	let map = {
@@ -362,10 +395,25 @@ function buildMapArray(arrElem) {
 	return map;
 }
 
+/**
+ * Function that sorts objects by field "population".
+ * 
+ * @param {Object} a with field "population"
+ * @param {Object} b with field "population"
+ * @returns {Number} that helps sort objects by descending
+ */
 function sortByPopulation(a, b) {
 	return b.population - a.population;
 }
 
+/**
+ * Reducer function that collects all cities and rates them using index from cities array.
+ * 
+ * @param {Object} accumulator that helds other objects like fields
+ * @param {Object} currentValue that holds city coordinates, name and population
+ * @param {Number} index of the current object. Used to get actual city rating by population.
+ * @returns 
+ */
 function rateCities(accumulator, currentValue, index) {
 	accumulator[currentValue.name] = {
 		population: currentValue.population,

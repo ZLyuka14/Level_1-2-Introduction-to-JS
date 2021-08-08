@@ -330,18 +330,37 @@ button {
 	padding: 25px 0;
 	margin: 25px 0;
 	text-align: center;
+	display: flex;
+	justify-content: center;
 }
+
+.csv__column{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 #csv01{
 	resize: none;
 	margin: 0 10px;
+	width: 100%;
+	height: 100%;
+	font-size: 13px;
 }
+
 #mod01{
 	resize: none;
 	margin: 0 10px;
 }
 
-#modifyBtn{
-	margin: 10px auto 0;
+#parse{
 	display: block;
+	margin: 10px 0 0;
+}
+
+#modifyBtn{
+	display: block;
+	margin: 10px 0 0;
 }
 /* End of CSV parser section */
